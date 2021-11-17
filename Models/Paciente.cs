@@ -1,5 +1,7 @@
 ﻿using System;
 using VirtualHosp.Clases;
+using VirtualHosp.Enums;
+using System.Collections.Generic;
 
 namespace VirtualHosp.Models
 {
@@ -7,26 +9,30 @@ namespace VirtualHosp.Models
     {
         private string HistorialMedico;
         private string Medicamentos;
-        private string AntecedentesMedicos;        
+        private string AntecedentesMedicos;
 
-        public Paciente(string historial, string meds, string antecedentes)
+        private PlanMedico planMedico;
+        private List<Medico> cartilla;
+
+        public Paciente(string historial, string meds, string antecedentes, PlanMedico plan)
         {
-
+            cartilla = new List<Medico>();
             HistorialMedico = historial;
             Medicamentos = meds;
             AntecedentesMedicos = antecedentes;
+            planMedico = plan;
 
         }
 
-
-
-        public void CrearTurnoVirtual()
+        public void CrearTurnoVirtual(string nombreMedico, float horario)
         {
-            Console.WriteLine("Creaste tu consulta");
+            elegirMedico(nombreMedico).AltaConsulta(horario);
         }
 
-
-
+        private Medico elegirMedico(String nombreMedico)
+        {
+            return cartilla.Find(medico => medico.GetNombre() == nombreMedico);
+        }
 
     }
 }

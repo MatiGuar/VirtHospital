@@ -6,28 +6,42 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using VirtualHosp.Clases;
 using System.Diagnostics;
+using System.Collections.Generic;
+using VirtualHosp.Enums;
 
 namespace VirtualHosp.Models
 {
-  
+
     public class Medico : Usuario
     {
-        private int numero;
+        private int NumeroMatricula;
+        private string Nombre;
+        private List<Consulta> turnos;
+        private Especialidades especialidad;
 
-     
 
-        public Medico(int numeroMatricula)
+
+        public Medico(int numero, string nombre, Especialidades esp)
         {
-            this.numero = numeroMatricula;
+            turnos = new List<Consulta>();
+            NumeroMatricula = numero;
+            Nombre = nombre;
+            especialidad = esp;
         }
-        
 
-        public void AltaConsulta()
+        public string GetNombre()
         {
-            Console.WriteLine("Aceptaste la consulta");
+            return Nombre;
         }
 
 
-        
+        public void AltaConsulta(float horario)
+        {
+            new Consulta(horario);
+
+        }
+
+
+
     }
 }
