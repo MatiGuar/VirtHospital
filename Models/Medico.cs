@@ -15,23 +15,16 @@ namespace VirtualHosp.Models
     public class Medico : Usuario
     {
         private int NumeroMatricula;
-        private string Nombre;
-        private List<Consulta> turnos;
-        private Especialidades especialidad;
+        private List<Consulta> Turnos;
+        private Especialidades Especialidad;
 
 
 
-        public Medico(int numero, string nombre, Especialidades esp)
+        public Medico(int numero, Especialidades especialidad)
         {
-            turnos = new List<Consulta>();
+            Turnos = new List<Consulta>();
             NumeroMatricula = numero;
-            Nombre = nombre;
-            especialidad = esp;
-        }
-
-        public string GetNombre()
-        {
-            return Nombre;
+            Especialidad = espececialidad;
         }
 
 

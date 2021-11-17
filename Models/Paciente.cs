@@ -31,7 +31,7 @@ namespace VirtualHosp.Models
 
         private Medico elegirMedico(String nombreMedico)
         {
-            return cartilla.Find(medico => medico.GetNombre() == nombreMedico);
+            return cartilla.Find(medico => medico.Nombre == nombreMedico);
         }
 
     }

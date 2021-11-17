@@ -10,17 +10,17 @@ namespace VirtualHosp.Models
     public class Consulta
     {
 
-        private const float DuracionConsulta = 30;
-        private float _horarioInicio;
-        private float tiempoConsulta;
-        private float _horarioFinal;
+        private float HorarioInicio;
+        private float TiempoConsulta;
+        private float HorarioFinal;
+        
 
 
-        public Consulta(float horario)
+        public Consulta(float horario, float duracionConsulta)
         {
-            _horarioInicio = horario;
-            tiempoConsulta = DuracionConsulta;
-            _horarioFinal = _horarioInicio + DuracionConsulta;
+            HorarioInicio = horario;
+            TiempoConsulta = duracionConsulta;
+            HorarioFinal = HorarioInicio + TiempoConsulta;
         }
 
 
