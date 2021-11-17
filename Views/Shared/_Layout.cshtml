@@ -1,0 +1,475 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Basic -->
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <!-- Mobile Metas -->
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <!-- Site Metas -->
+    <meta name="keywords" content="" />
+    <meta name="description" content="" />
+    <meta name="author" content="" />
+    <link rel="shortcut icon" href="images/favicon.png" type="">
+
+    <title> Hospital Virtual </title>
+
+    <!-- bootstrap core css -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
+
+    <!-- fonts style -->
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap" rel="stylesheet">
+
+    <!--owl slider stylesheet -->
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+
+    <!-- font awesome style -->
+    <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+    <!-- Custom styles for this template -->
+    <link href="css/style.css" rel="stylesheet" />
+    <!-- responsive style -->
+    <link href="css/responsive.css" rel="stylesheet" />
+
+</head>
+<body>
+    <div class="hero_area">
+
+
+
+        <header>
+            <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
+                <div class="container">
+                    <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Hospital Virtual</a>
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target=".navbar-collapse" aria-controls="navbarSupportedContent"
+                            aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul class="navbar-nav">
+                            <li class="nav-item active">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="">Usuarios</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="departments.html">Paciente</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="doctors.html">Medico</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="contact.html">Consulta</a>
+                            </li>
+                            <form class="form-inline">
+                                <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit">
+                                    <i class="fa fa-search" aria-hidden="true"></i>
+                                </button>
+                            </form>
+                        </ul>
+                    </div>
+                </div>
+            </nav>
+        </header>
+        <!-- end header section -->
+        <!-- slider section -->
+        <div class="container">
+            <main role="main" class="pb-3">
+                @RenderBody()
+            </main>
+        </div>
+
+    </div>
+
+    <!-- department section -->
+
+    <section class="department_section layout_padding">
+        <div class="department_container">
+            <div class="container ">
+                <div class="heading_container heading_center">
+                    <h2>
+                        Nuestros departamentos
+                    </h2>
+
+                </div>
+                <div class="row">
+                    <div class="col-md-3">
+                        <div class="box ">
+                            <div class="img-box">
+                                <img src="images/s1.png" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    Cardiologia
+                                </h5>
+                                <p>
+                                    Un equipo de 12 cardiólogos realiza además de consultorios, estudios como Ergometrías, Holter, control de marcapasos, estudios electrofisiológicos, ablación. Ecodoppler.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box ">
+                            <div class="img-box">
+                                <img src="images/s2.png" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    Consultas
+                                </h5>
+                                <p>
+                                    Cobertura de todas las especialidades clínicas y quirúrgicas. Con un plantel de más de 130 profesionales de reconocida trayectoria.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box ">
+                            <div class="img-box">
+                                <img src="images/s3.png" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    Cirugía
+                                </h5>
+                                <p>
+                                    Contamos con un equipo de cirujanos especialistas en: cirugía cardíaca, neurocirugía, cirugía vascular y cirugía laparoscópica.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <div class="box ">
+                            <div class="img-box">
+                                <img src="images/s4.png" alt="">
+                            </div>
+                            <div class="detail-box">
+                                <h5>
+                                    Primeros auxilios
+                                </h5>
+                                <p>
+                                    Contamos con un equipo de especialistas disponibles las 24hs para vos.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-box">
+                    <a href="">
+                        Ver más
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- end department section -->
+    <!-- doctor section -->
+
+    <section class="doctor_section layout_padding">
+        <div class="container">
+            <div class="heading_container heading_center">
+                <h2>
+                    Nuestros Medicos
+                </h2>
+                <p class="col-md-10 mx-auto px-0">
+                    ¡Contamos con un equipo de profesionales altamente capacitado para brindarle a todos nuestros usuarios servicios médicos de calidad!
+                </p>
+            </div>
+            <div class="row">
+                <div class="col-sm-6 col-lg-4 mx-auto">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="images/d1.jpg" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <div class="social_box">
+                                <a href="">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <h5>
+                                Josefina Rosales
+                            </h5>
+                            <h6 class="">
+                                Medica Traumatologa
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mx-auto">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="images/d2.jpg" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <div class="social_box">
+                                <a href="">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <h5>
+                                Roberto De Rossi
+                            </h5>
+                            <h6 class="">
+                                Medico alergista
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-6 col-lg-4 mx-auto">
+                    <div class="box">
+                        <div class="img-box">
+                            <img src="images/d3.jpg" alt="">
+                        </div>
+                        <div class="detail-box">
+                            <div class="social_box">
+                                <a href="">
+                                    <i class="fa fa-facebook" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa fa-twitter" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa fa-youtube" aria-hidden="true"></i>
+                                </a>
+                                <a href="">
+                                    <i class="fa fa-linkedin" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                            <h5>
+                                Luciana Spinelli
+                            </h5>
+                            <h6 class="">
+                                Medica Ginecologa
+                            </h6>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="btn-box">
+                <a href="">
+                    Ver Más
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <!-- end doctor section -->
+    <!-- client section -->
+
+    <section class="client_section layout_padding-bottom">
+        <div class="container">
+            <div class="heading_container heading_center ">
+                <h2>
+                    Testimonial
+                </h2>
+            </div>
+            <div id="carouselExample2Controls" class="carousel slide" data-ride="carousel">
+                <div class="carousel-inner">
+                    <div class="carousel-item active">
+                        <div class="row">
+                            <div class="col-md-11 col-lg-10 mx-auto">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/client.jpg" alt="" />
+                                    </div>
+                                    <div class="detail-box">
+                                        <div class="name">
+                                            <h6>
+                                                Jonatan Rodriguez
+                                            </h6>
+                                        </div>
+                                        <p>
+                                            "Ohhhh si!! recomiendo totalmente que utilicen Hospital Virtual!! es la manera mas rapida y facil para hacer una consulta medica!."
+                                        </p>
+                                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-11 col-lg-10 mx-auto">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/client.jpg" alt="" />
+                                    </div>
+                                    <div class="detail-box">
+                                        <div class="name">
+                                            <h6>
+                                                Juan Gimenez
+                                            </h6>
+                                        </div>
+                                        <p>
+                                            "Nunca habia realizado una consulta medica, y desde que conocí Hospital virtual... ya no hago mas consultas presenciales!!"
+                                        </p>
+                                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="carousel-item">
+                        <div class="row">
+                            <div class="col-md-11 col-lg-10 mx-auto">
+                                <div class="box">
+                                    <div class="img-box">
+                                        <img src="images/client.jpg" alt="" />
+                                    </div>
+                                    <div class="detail-box">
+                                        <div class="name">
+                                            <h6>
+                                                Pedro Ramirez
+                                            </h6>
+                                        </div>
+                                        <p>
+                                            "Me recomendo un amigo utilizar la aplicación hace varios meses, y hoy le sigo agradeciendo... no se que haria sin Hospital Virtual"
+                                        </p>
+                                        <i class="fa fa-quote-left" aria-hidden="true"></i>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="carousel_btn-container">
+                    <a class="carousel-control-prev" href="#carouselExample2Controls" role="button" data-slide="prev">
+                        <i class="fa fa-long-arrow-left" aria-hidden="true"></i>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselExample2Controls" role="button" data-slide="next">
+                        <i class="fa fa-long-arrow-right" aria-hidden="true"></i>
+                        <span class="sr-only">Next</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- end client section -->
+
+    <footer class="footer_section">
+        <div class="container">
+            
+            <div class="row">
+                <div class="col-md-6 col-lg-3 footer_col">
+                    <div class="footer_contact">
+                        <h4>
+                            Ir a..
+                        </h4>
+                        <div class="contact_link_box">
+
+                            <a href="">
+                                <i class="fa fa-phone" aria-hidden="true"></i>
+                                <span>
+                                    Llamar +54 011 234567890
+                                </span>
+                            </a>
+                            <a href="">
+                                <i class="fa fa-envelope" aria-hidden="true"></i>
+                                <span>
+                                    hospital.virtual@gmail.com
+                                </span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="footer_social">
+                        <a href="">
+                            <i class="fa fa-facebook" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-twitter" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-linkedin" aria-hidden="true"></i>
+                        </a>
+                        <a href="">
+                            <i class="fa fa-instagram" aria-hidden="true"></i>
+                        </a>
+                    </div>
+                    &copy; 2021 - VirtualHosp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                </div>
+                <div class="col-md-6 col-lg-3 footer_col">
+                    <div class="footer_detail">
+                        <h4>
+                            Hospitales / Clínicas
+                        </h4>
+                        <p>
+                            Hospital Virtual implementa de forma rápida y accesible servicios de telemedicina que permiten llegar a nuevos mercados o incorporar Monitoreo de enfermos crónicos, telegeriatría, salud de presos, asistencia al viajero, telerehabilitación, programas de acompañamiento, etc.
+                        </p>
+                    </div>
+                </div>
+                <div class="col-md-6 col-lg-2 mx-auto footer_col">
+                    <div class="footer_link_box">
+                        <h4>
+                            Links
+                        </h4>
+                        <div class="footer_links">
+                            <a class="active" href="index.html">
+                                Home
+                            </a>
+                            <a class="" href="about.html">
+                                Usuario
+                            </a>
+                            <a class="" href="departments.html">
+                                Pacientes
+                            </a>
+                            <a class="" href="doctors.html">
+                                Medicos
+                            </a>
+                            <a class="" href="contact.html">
+                                Contacto
+                            </a>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+            <div class="footer-info">
+                <p>
+                    &copy; <span id="displayYear"></span> All Rights Reserved By
+                    <a href="https://html.design/">Free Html Templates<br><br></a>
+                    &copy; <span id="displayYear"></span> Distributed By
+                    <a href="https://themewagon.com/">ThemeWagon</a>
+                </p>
+
+            </div>
+        </div>
+    </footer>
+    <!-- footer section -->
+
+
+
+
+    <footer class="border-top footer text-muted">
+        <div class="container">
+            &copy; 2021 - VirtualHosp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+        </div>
+    </footer>
+
+    <script src="~/lib/jquery/dist/jquery.min.js"></script>
+    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="~/js/site.js" asp-append-version="true"></script>
+    @RenderSection("Scripts", required: false)
+</body>
+</html>
