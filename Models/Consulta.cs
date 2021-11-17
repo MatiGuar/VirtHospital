@@ -9,17 +9,17 @@ namespace VirtualHosp.Models
 
     public class Consulta
     {
-
+      
         private float HorarioInicio;
         private float TiempoConsulta;
         private float HorarioFinal;
         
 
 
-        public Consulta(float horario, float duracionConsulta)
+        public Consulta(float horario)
         {
             HorarioInicio = horario;
-            TiempoConsulta = duracionConsulta;
+           
             HorarioFinal = HorarioInicio + TiempoConsulta;
         }
 

@@ -11,22 +11,25 @@ namespace VirtualHosp.Models
         private string Medicamentos;
         private string AntecedentesMedicos;
 
+        private List<Consulta> turnos;
         private PlanMedico planMedico;
         private List<Medico> cartilla;
 
         public Paciente(string historial, string meds, string antecedentes, PlanMedico plan)
+            : base()
         {
             cartilla = new List<Medico>();
+            turnos = new List<Consulta>();
             HistorialMedico = historial;
             Medicamentos = meds;
             AntecedentesMedicos = antecedentes;
             planMedico = plan;
-
         }
 
         public void CrearTurnoVirtual(string nombreMedico, float horario)
         {
-            elegirMedico(nombreMedico).AltaConsulta(horario);
+            turnos.Add(elegirMedico(nombreMedico).AltaConsulta(horario));
+            Console.WriteLine("Turno con el profesional" + nombreMedico + "generado con exito");
         }
 
         private Medico elegirMedico(String nombreMedico)

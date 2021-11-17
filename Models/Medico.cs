@@ -6,7 +6,6 @@ using System.ComponentModel.DataAnnotations;
 using System.ComponentModel.DataAnnotations.Schema;
 using VirtualHosp.Clases;
 using System.Diagnostics;
-using System.Collections.Generic;
 using VirtualHosp.Enums;
 
 namespace VirtualHosp.Models
@@ -21,17 +20,20 @@ namespace VirtualHosp.Models
 
 
         public Medico(int numero, Especialidades especialidad)
+            : base ()
         {
             Turnos = new List<Consulta>();
             NumeroMatricula = numero;
-            Especialidad = espececialidad;
+            Especialidad = especialidad;
         }
 
 
-        public void AltaConsulta(float horario)
+        public Consulta AltaConsulta(float horario)
         {
-            new Consulta(horario);
-
+            Consulta c = new Consulta(horario);
+            Turnos.Add(c);
+            return c;
+            
         }
 
 

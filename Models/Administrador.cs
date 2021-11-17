@@ -9,7 +9,7 @@ namespace VirtualHosp.Models
 
         public void AltaMedico(int numeroMatricula, Especialidades especialidad)
         {
-            Medico m = new Medico(numeroMatricula, Especialidades especialidad);
+            Medico m = new Medico(numeroMatricula, especialidad);
 
             Console.WriteLine("Creaste un medico con el numero de matricula " + numeroMatricula);
         }
