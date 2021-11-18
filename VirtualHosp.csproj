@@ -6,13 +6,6 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <Compile Remove="Migrations\20211118000531_VirtualHosp.Context.HospitalDbContext4.cs" />
-    <Compile Remove="Migrations\20211118000531_VirtualHosp.Context.HospitalDbContext4.Designer.cs" />
-    <Compile Remove="Migrations\20211118001159_VirtualHosp.Context.HospitalDbContext5.cs" />
-    <Compile Remove="Migrations\20211118001159_VirtualHosp.Context.HospitalDbContext5.Designer.cs" />
-  </ItemGroup>
-
-  <ItemGroup>
     <None Include="wwwroot\.git\COMMIT_EDITMSG" />
     <None Include="wwwroot\.git\config" />
     <None Include="wwwroot\.git\description" />

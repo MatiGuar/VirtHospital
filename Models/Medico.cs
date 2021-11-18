@@ -30,7 +30,7 @@ namespace VirtualHosp.Models
        
         public Consulta AltaConsulta(float horario)
         {
-            Consulta c = new Consulta(horario);
+            Consulta c = new Consulta();
             Turnos.Add(c);
             return c;
             

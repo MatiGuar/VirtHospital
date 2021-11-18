@@ -27,15 +27,18 @@ namespace VirtualHosp.Clases
         public int NumeroDocumento { get; set; }
         [Display(Name = "Estado civil")]
         public EstadoCivil? EstadoCivil { get; set; }
+
         [Required(ErrorMessage = "Email es requerido")]
         [DataType(DataType.EmailAddress)]
-        [EmailAddress]
+        
         public string Email { get; set; }
         public string Direccion { get; set; }
         public string Nacionalidad { get; set; }
         public string Ciudad { get; set; }
+
         [Display(Name = "Codigo Postal")]
         public int? CodigoPostal { get; set; }
+        
         [DataType(DataType.Password)]
         [Display(Name = "Contraseña")]
         [Required(ErrorMessage = "Contraseña es requerida")]

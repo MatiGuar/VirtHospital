@@ -78,6 +78,24 @@ namespace VirtualHosp.Migrations
                     b.HasDiscriminator<string>("Discriminator").HasValue("Usuario");
                 });
 
+            modelBuilder.Entity("VirtualHosp.Models.Consulta", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<float>("HorarioFinal")
+                        .HasColumnType("real");
+
+                    b.Property<float>("HorarioInicio")
+                        .HasColumnType("real");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Consultas");
+                });
+
             modelBuilder.Entity("VirtualHosp.Models.Medico", b =>
                 {
                     b.HasBaseType("VirtualHosp.Clases.Usuario");
@@ -107,7 +125,7 @@ namespace VirtualHosp.Migrations
                         .IsRequired()
                         .HasColumnType("nvarchar(max)");
 
-                    b.Property<int>("planMedico")
+                    b.Property<int>("PlanMedico")
                         .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("Paciente");

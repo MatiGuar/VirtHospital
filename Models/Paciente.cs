@@ -3,13 +3,13 @@ using VirtualHosp.Clases;
 using VirtualHosp.Enums;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
+
 
 namespace VirtualHosp.Models
 {
     public class Paciente : Usuario
     {
-      
+        
 
         [Required(ErrorMessage = "Historial Medico es requerido")]
         [Display(Name = "Historial Medico:")]
@@ -25,18 +25,18 @@ namespace VirtualHosp.Models
 
         [Required(ErrorMessage = "Seleccione un plan médico")]
         [Display(Name = "Plan Médico:")]
-        public PlanMedico planMedico { get; set; }
+        public PlanMedico PlanMedico { get; set; }
 
 
 
-      private List<Medico> cartilla = new List<Medico>();
-      private List<Consulta> turnos = new List<Consulta>();
+       private List<Medico> cartilla = new List<Medico>();
+       private List<Consulta> turnos = new List<Consulta>();
 
 
 
 
 
-          public void CrearTurnoVirtual(string nombreMedico, float horario)
+        public void CrearTurnoVirtual(string nombreMedico, float horario)
           {
               turnos.Add(elegirMedico(nombreMedico).AltaConsulta(horario));
 
@@ -47,6 +47,6 @@ namespace VirtualHosp.Models
           {
               return cartilla.Find(medico => medico.Nombre == nombreMedico);
           }
-     
+
     }
 }

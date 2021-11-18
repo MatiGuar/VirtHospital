@@ -8,6 +8,20 @@ namespace VirtualHosp.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
+                name: "Consultas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    HorarioInicio = table.Column<float>(nullable: false),
+                    HorarioFinal = table.Column<float>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Consultas", x => x.Id);
+                });
+
+            migrationBuilder.CreateTable(
                 name: "Usuarios",
                 columns: table => new
                 {
@@ -24,7 +38,14 @@ namespace VirtualHosp.Migrations
                     Nacionalidad = table.Column<string>(nullable: true),
                     Ciudad = table.Column<string>(nullable: true),
                     CodigoPostal = table.Column<int>(nullable: true),
-                    Password = table.Column<string>(maxLength: 30, nullable: false)
+                    Password = table.Column<string>(maxLength: 30, nullable: false),
+                    Discriminator = table.Column<string>(nullable: false),
+                    Especialidad = table.Column<int>(nullable: true),
+                    NumeroMatricula = table.Column<int>(nullable: true),
+                    HistorialMedico = table.Column<string>(nullable: true),
+                    Medicamentos = table.Column<string>(nullable: true),
+                    AntecedentesMedicos = table.Column<string>(nullable: true),
+                    PlanMedico = table.Column<int>(nullable: true)
                 },
                 constraints: table =>
                 {
@@ -34,6 +55,9 @@ namespace VirtualHosp.Migrations
 
         protected override void Down(MigrationBuilder migrationBuilder)
         {
+            migrationBuilder.DropTable(
+                name: "Consultas");
+
             migrationBuilder.DropTable(
                 name: "Usuarios");
         }
