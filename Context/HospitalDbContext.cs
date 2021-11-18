@@ -1,6 +1,7 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using VirtualHosp.Clases;
 using VirtualHosp.Enums;
+using VirtualHosp.Models;
 
 namespace VirtualHosp.Context
 {
@@ -18,5 +19,8 @@ namespace VirtualHosp.Context
         }
         //entities
         public DbSet<Usuario> Usuarios { get; set; }
+        public DbSet<Paciente> Pacientes { get; set; }
+        public DbSet<Medico> Medicos { get; set; }
+
     }
 }

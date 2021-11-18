@@ -13,21 +13,21 @@ namespace VirtualHosp.Models
 
     public class Medico : Usuario
     {
-        private int NumeroMatricula;
-        private List<Consulta> Turnos;
-        private Especialidades Especialidad;
+        
 
+        [Required(ErrorMessage = "Especialidad requerida")]
+        [Display(Name = "Especialidad")]
+        public Especialidades Especialidad { get; set; }
+        
+       
 
+        [Required(ErrorMessage = "Numero De Matricula requerido")]
+        [Display(Name = "Numero De Matricula")]
+        public int NumeroMatricula { get; set; }
 
-        public Medico(int numero, Especialidades especialidad)
-            : base ()
-        {
-            Turnos = new List<Consulta>();
-            NumeroMatricula = numero;
-            Especialidad = especialidad;
-        }
+        private List<Consulta> Turnos = new List<Consulta>();
 
-
+       
         public Consulta AltaConsulta(float horario)
         {
             Consulta c = new Consulta(horario);

@@ -2,40 +2,51 @@
 using VirtualHosp.Clases;
 using VirtualHosp.Enums;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace VirtualHosp.Models
 {
     public class Paciente : Usuario
     {
-        private string HistorialMedico;
-        private string Medicamentos;
-        private string AntecedentesMedicos;
+      
 
-        private List<Consulta> turnos;
-        private PlanMedico planMedico;
-        private List<Medico> cartilla;
+        [Required(ErrorMessage = "Historial Medico es requerido")]
+        [Display(Name = "Historial Medico:")]
+        public string HistorialMedico { get; set; }
 
-        public Paciente(string historial, string meds, string antecedentes, PlanMedico plan)
-            : base()
-        {
-            cartilla = new List<Medico>();
-            turnos = new List<Consulta>();
-            HistorialMedico = historial;
-            Medicamentos = meds;
-            AntecedentesMedicos = antecedentes;
-            planMedico = plan;
-        }
+        [Required(ErrorMessage = "Medicamentos es requerido")]
+        [Display(Name = "Medicamentos:")]
+        public string Medicamentos { get; set; }
 
-        public void CrearTurnoVirtual(string nombreMedico, float horario)
-        {
-            turnos.Add(elegirMedico(nombreMedico).AltaConsulta(horario));
-            Console.WriteLine("Turno con el profesional" + nombreMedico + "generado con exito");
-        }
+        [Required(ErrorMessage = "Antecedentes Medicos es requerido")]
+        [Display(Name = "Antecedentes Medicos:")]
+        public string AntecedentesMedicos { get; set; }
 
-        private Medico elegirMedico(String nombreMedico)
-        {
-            return cartilla.Find(medico => medico.Nombre == nombreMedico);
-        }
+        [Required(ErrorMessage = "Seleccione un plan médico")]
+        [Display(Name = "Plan Médico:")]
+        public PlanMedico planMedico { get; set; }
 
+
+
+      private List<Medico> cartilla = new List<Medico>();
+      private List<Consulta> turnos = new List<Consulta>();
+
+
+
+
+
+          public void CrearTurnoVirtual(string nombreMedico, float horario)
+          {
+              turnos.Add(elegirMedico(nombreMedico).AltaConsulta(horario));
+
+             // Console.WriteLine("Turno con el profesional" + nombreMedico + "generado con exito");
+          }
+
+          private Medico elegirMedico(String nombreMedico)
+          {
+              return cartilla.Find(medico => medico.Nombre == nombreMedico);
+          }
+     
     }
 }
