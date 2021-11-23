@@ -14,9 +14,10 @@
             <div asp-validation-summary="ModelOnly" class="text-danger"></div>
             <div class="form-group">
                 <label asp-for="Especialidad" class="control-label"></label>
-                <select asp-for="Especialidad" class="form-control"></select>
+                <select asp-for="Especialidad" asp-items="ViewBag.Especialidades" class="form-control"></select>
                 <span asp-validation-for="Especialidad" class="text-danger"></span>
             </div>
+
             <div class="form-group">
                 <label asp-for="NumeroMatricula" class="control-label"></label>
                 <input asp-for="NumeroMatricula" class="form-control" />
@@ -39,7 +40,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="TipoDocumento" class="control-label"></label>
-                <select asp-for="TipoDocumento" class="form-control"></select>
+                <select asp-for="TipoDocumento" asp-items="ViewBag.TipoDocumento" class="form-control"></select>
                 <span asp-validation-for="TipoDocumento" class="text-danger"></span>
             </div>
             <div class="form-group">
@@ -49,7 +50,7 @@
             </div>
             <div class="form-group">
                 <label asp-for="EstadoCivil" class="control-label"></label>
-                <input asp-for="EstadoCivil" class="form-control" />
+                <select asp-for="EstadoCivil" asp-items="ViewBag.EstadoCivil" class="form-control"></select>
                 <span asp-validation-for="EstadoCivil" class="text-danger"></span>
             </div>
             <div class="form-group">

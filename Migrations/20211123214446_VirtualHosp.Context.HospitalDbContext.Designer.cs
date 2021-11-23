@@ -10,7 +10,7 @@ using VirtualHosp.Context;
 namespace VirtualHosp.Migrations
 {
     [DbContext(typeof(HospitalDbContext))]
-    [Migration("20211118014838_VirtualHosp.Context.HospitalDbContext")]
+    [Migration("20211123214446_VirtualHosp.Context.HospitalDbContext")]
     partial class VirtualHospContextHospitalDbContext
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -93,7 +93,17 @@ namespace VirtualHosp.Migrations
                     b.Property<float>("HorarioInicio")
                         .HasColumnType("real");
 
+                    b.Property<int>("medicoId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("pacienteId")
+                        .HasColumnType("int");
+
                     b.HasKey("Id");
+
+                    b.HasIndex("medicoId");
+
+                    b.HasIndex("pacienteId");
 
                     b.ToTable("Consultas");
                 });
@@ -131,6 +141,21 @@ namespace VirtualHosp.Migrations
                         .HasColumnType("int");
 
                     b.HasDiscriminator().HasValue("Paciente");
+                });
+
+            modelBuilder.Entity("VirtualHosp.Models.Consulta", b =>
+                {
+                    b.HasOne("VirtualHosp.Models.Medico", "medico")
+                        .WithMany()
+                        .HasForeignKey("medicoId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("VirtualHosp.Models.Paciente", "paciente")
+                        .WithMany()
+                        .HasForeignKey("pacienteId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
                 });
 #pragma warning restore 612, 618
         }

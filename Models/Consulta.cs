@@ -16,6 +16,15 @@ namespace VirtualHosp.Models
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
+        [Required]
+        [Display(Name = "Medico")]
+        public Medico medico { get; set; }
+
+        [Required]
+        [Display(Name = "Paciente")]
+        public Paciente paciente { get; set; }
+    
+
 
         [Required(ErrorMessage = "Debe ingresar un horario")]
         [Display(Name = "Horario:")]
@@ -23,9 +32,12 @@ namespace VirtualHosp.Models
 
         
 
-        [Required]
+        [Required(ErrorMessage = "Debe ingresar un horario de finalizacion")]
         [Display(Name = "Horario finalizacion:")]
         public float HorarioFinal { get; set; }
+
+
+
 
 
 

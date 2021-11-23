@@ -8,20 +8,6 @@ namespace VirtualHosp.Migrations
         protected override void Up(MigrationBuilder migrationBuilder)
         {
             migrationBuilder.CreateTable(
-                name: "Consultas",
-                columns: table => new
-                {
-                    Id = table.Column<int>(nullable: false)
-                        .Annotation("SqlServer:Identity", "1, 1"),
-                    HorarioInicio = table.Column<float>(nullable: false),
-                    HorarioFinal = table.Column<float>(nullable: false)
-                },
-                constraints: table =>
-                {
-                    table.PrimaryKey("PK_Consultas", x => x.Id);
-                });
-
-            migrationBuilder.CreateTable(
                 name: "Usuarios",
                 columns: table => new
                 {
@@ -51,6 +37,44 @@ namespace VirtualHosp.Migrations
                 {
                     table.PrimaryKey("PK_Usuarios", x => x.Id);
                 });
+
+            migrationBuilder.CreateTable(
+                name: "Consultas",
+                columns: table => new
+                {
+                    Id = table.Column<int>(nullable: false)
+                        .Annotation("SqlServer:Identity", "1, 1"),
+                    medicoId = table.Column<int>(nullable: false),
+                    pacienteId = table.Column<int>(nullable: false),
+                    HorarioInicio = table.Column<float>(nullable: false),
+                    HorarioFinal = table.Column<float>(nullable: false)
+                },
+                constraints: table =>
+                {
+                    table.PrimaryKey("PK_Consultas", x => x.Id);
+                    table.ForeignKey(
+                        name: "FK_Consultas_Usuarios_medicoId",
+                        column: x => x.medicoId,
+                        principalTable: "Usuarios",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                    table.ForeignKey(
+                        name: "FK_Consultas_Usuarios_pacienteId",
+                        column: x => x.pacienteId,
+                        principalTable: "Usuarios",
+                        principalColumn: "Id",
+                        onDelete: ReferentialAction.Cascade);
+                });
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Consultas_medicoId",
+                table: "Consultas",
+                column: "medicoId");
+
+            migrationBuilder.CreateIndex(
+                name: "IX_Consultas_pacienteId",
+                table: "Consultas",
+                column: "pacienteId");
         }
 
         protected override void Down(MigrationBuilder migrationBuilder)

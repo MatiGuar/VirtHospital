@@ -30,6 +30,7 @@ namespace VirtualHosp.Models
 
 
        private List<Medico> cartilla = new List<Medico>();
+
        private List<Consulta> turnos = new List<Consulta>();
 
 
@@ -43,7 +44,7 @@ namespace VirtualHosp.Models
              // Console.WriteLine("Turno con el profesional" + nombreMedico + "generado con exito");
           }
 
-          private Medico elegirMedico(String nombreMedico)
+          private Medico elegirMedico(string nombreMedico)
           {
               return cartilla.Find(medico => medico.Nombre == nombreMedico);
           }

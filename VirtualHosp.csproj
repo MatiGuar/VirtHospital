@@ -93,6 +93,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="Migrations\" />
     <Folder Include="wwwroot\.git\objects\info\" />
     <Folder Include="wwwroot\.git\objects\pack\" />
     <Folder Include="wwwroot\.git\refs\tags\" />

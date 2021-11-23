@@ -7,12 +7,17 @@ using Microsoft.AspNetCore.Mvc.Rendering;
 using Microsoft.EntityFrameworkCore;
 using VirtualHosp.Context;
 using VirtualHosp.Models;
+using VirtualHosp.Enums;
+
 
 namespace VirtualHosp.Controllers
 {
     public class MedicosController : Controller
     {
         private readonly HospitalDbContext _context;
+        private static readonly SelectList tipoDocumento = new SelectList(Enum.GetValues(typeof(TipoDocumento)), TipoDocumento.DNI);
+        private static readonly SelectList estadoCivil = new SelectList(Enum.GetValues(typeof(EstadoCivil)), EstadoCivil.SOLTERO);
+        private static readonly SelectList especialidad = new SelectList(Enum.GetValues(typeof(Especialidades)), Especialidades.ORTODONCISTA);
 
         public MedicosController(HospitalDbContext context)
         {
@@ -44,8 +49,16 @@ namespace VirtualHosp.Controllers
         }
 
         // GET: Medicos/Create
+
+
+
+
         public IActionResult Create()
         {
+            ViewBag.TipoDocumento = tipoDocumento;
+            ViewBag.EstadoCivil = estadoCivil;
+            ViewBag.Especialidades = especialidad;
+
             return View();
         }
 
