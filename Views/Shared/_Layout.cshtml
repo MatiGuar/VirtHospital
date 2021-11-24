@@ -50,15 +50,16 @@
                             <li class="nav-item active">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
                             </li>
-                            <li class="nav-item">
-                                <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="">Usuarios</a>
-                            </li>
+                            <!--   <li class="nav-item">
+                            <a class="nav-link text-dark" asp-area="" asp-controller="Usuarios" asp-action="">Usuarios</a>
+                             </li> -->
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Pacientes" asp-action="">Paciente</a>
                             </li>
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Medicos" asp-action="">Medico</a>
                             </li>
+
                             <li class="nav-item">
                                 <a class="nav-link text-dark" asp-area="" asp-controller="Consultas" asp-action="">Consulta</a>
                             </li>
@@ -428,9 +429,9 @@
                             <a class="active" href="index.html">
                                 Home
                             </a>
-                            <a class="" href="about.html">
+                            <!--  <a class="" href="about.html">
                                 Usuario
-                            </a>
+                            </a> -->
                             <a class="" href="departments.html">
                                 Pacientes
                             </a>
@@ -443,7 +444,7 @@
                         </div>
                     </div>
                 </div>
-               
+
             </div>
             <div class="footer-info">
                 <p>
@@ -461,15 +462,15 @@
 
 
 
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2021 - VirtualHosp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
-        </div>
-    </footer>
+                            <footer class="border-top footer text-muted">
+                                <div class="container">
+                                    &copy; 2021 - VirtualHosp - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                                </div>
+                            </footer>
 
-    <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="~/js/site.js" asp-append-version="true"></script>
-    @RenderSection("Scripts", required: false)
+                            <script src="~/lib/jquery/dist/jquery.min.js"></script>
+                            <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+                            <script src="~/js/site.js" asp-append-version="true"></script>
+                            @RenderSection("Scripts", required: false)
 </body>
 </html>
